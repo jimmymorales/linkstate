@@ -148,7 +148,10 @@ angular.module('linkState', ['ngMaterial'])
     });
     if (newNetwork) {
       newNetwork.destroy();
+      newNetwork = undefined;
     }
+    newNodes = new vis.DataSet();
+    newEdges = new vis.DataSet();
   };
 
   var D = {};
@@ -162,7 +165,10 @@ angular.module('linkState', ['ngMaterial'])
     N = [];
     if (newNetwork) {
       newNetwork.destroy();
+      newNetwork = undefined;
     }
+    newNodes = new vis.DataSet();
+    newEdges = new vis.DataSet();
     $scope.rows.push(initialRow());
     $scope.linkState($scope.initialNode);
     $scope.generateNewGraph();
