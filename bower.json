@@ -1,0 +1,24 @@
+{
+  "name": "lab9-linkstate",
+  "version": "0.0.0",
+  "authors": [
+    "Jimmy Morales <jimmy@centralservices.io>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vis": "~4.9.0",
+    "angular-material": "~0.11.4",
+    "angular": "~1.4.7"
+  }
+}

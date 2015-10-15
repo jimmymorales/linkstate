@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="linkState">
+<head>
+  <title>LinkState</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/vis/dist/vis.min.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+  <script type="text/javascript" src="bower_components/vis/dist/vis.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</head>
+<body layout-fill layout="column" ng-controller="linkStateController">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>
+        <span>Lab9 LinkState</span>
+      </h2>
+    </div>
+  </md-toolbar>
+  <md-content layout="row" flex>
+    <div layout="column" flex>
+      <div id="mynetwork"></div>
+      <div id="networkresult"></div>
+    </div>
+    <md-content flex layout="column" layout-padding>
+      <md-card>
+        <md-card-content>
+          <h2 class="md-title">Configure</h2>
+          <md-input-container>
+            <label>Initial Node</label>
+            <md-select ng-model="initialNode">
+              <md-option ng-repeat="node in nodes" value="{{node.label}}">
+                {{node.label}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </md-card-content>
+        <div class="md-actions" layout="row" layout-align="end center">
+          <md-button ng-click="resetData()">Reset</md-button>
+          <md-button ng-click="submit()" ng-disabled="!initialNode">Submit</md-button>
+        </div>
+      </md-card>
+      <div layout="column">
+        <div layout="row" ng-repeat="row in rows" ng-init="rowIndex = $index">
+          <div class="cell" ng-repeat="cell in row track by $index" ng-class="{bold:rowIndex===0||rowIndex===(rows.length-1)}" flex>{{cell}}</div>
+        </div>
+      </div>
+    </md-content>
+  </md-content>
+</body>
+</html>

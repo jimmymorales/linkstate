@@ -1,0 +1,26 @@
+<md-dialog aria-label="New Edge"  ng-cloak>
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>New Edge</h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <md-input-container>
+        <label>Weight</label>
+        <input ng-model="edge.weight">
+      </md-input-container>
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <span flex></span>
+    <md-button ng-click="cancel()" >
+     Cancel
+    </md-button>
+    <md-button ng-disabled="!edge.weight" ng-click="create()" style="margin-right:20px;" >
+     Create
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

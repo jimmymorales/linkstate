@@ -1,0 +1,12 @@
+.vis-network {
+  height: 300px !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.cell {
+  border: black 1px solid;
+  overflow: hidden;
+}
